@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#001e6b">
+    <meta name="description" content="Bringing friends and family together one game at a time. Meet Rollors, the original rolling yard game.">
+    <title>Rollors — The Original Rolling Yard Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="announcement">FREE SHIPPING ON ORDERS OVER $80</div>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Rollors home">
+        <img src="images/header-logo.png" alt="Rollors">
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="menu-toggle-label">Menu</span>
+        <span class="menu-icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="game-menu">THE GAME <span class="caret" aria-hidden="true"></span></button>
+          <div class="nav-dropdown" id="game-menu" hidden>
+            <a href="#how-to-play">How to Play</a>
+            <a href="#why-rollors">Why Rollors</a>
+            <a href="#places">Places to Play</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <button class="nav-trigger shop-trigger" type="button" aria-expanded="false" aria-controls="shop-menu">SHOP <span class="store-badge">STORE</span><span class="caret" aria-hidden="true"></span></button>
+          <div class="nav-dropdown" id="shop-menu" hidden>
+            <a href="#selector">Shop Rollors</a>
+            <a href="#selector">Find Your Rollors</a>
+            <a href="/collections/all">Shop All</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="story-menu">OUR STORY <span class="caret" aria-hidden="true"></span></button>
+          <div class="nav-dropdown" id="story-menu" hidden>
+            <a href="#story">Our Story</a>
+            <a href="#recognition">Recognition</a>
+          </div>
+        </div>
+        <a class="nav-link" href="/blogs/news">JOURNAL</a>
+
+        <div class="nav-tools">
+          <button class="icon-button search-toggle" type="button" aria-label="Open search" aria-expanded="false" aria-controls="search-panel">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.4"></circle><path d="m15.5 15.5 4.5 4.5"></path></svg>
+          </button>
+          <a class="icon-button" href="/account/login" aria-label="Account">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7.8" r="3.1"></circle><path d="M5.4 20c.4-3.5 2.9-5.4 6.6-5.4s6.2 1.9 6.6 5.4"></path></svg>
+          </a>
+          <a class="icon-button cart-link" href="/cart" aria-label="Shopping bag, 0 items">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 8.5h15l1 12h-17l1-12Z"></path><path d="M9 9V6a3 3 0 0 1 6 0v3"></path></svg>
+            <span class="cart-count" aria-hidden="true">0</span>
+          </a>
+        </div>
+      </nav>
+
+      <form class="search-panel" id="search-panel" role="search" hidden>
+        <label class="visually-hidden" for="site-search">Search the page</label>
+        <input id="site-search" type="search" placeholder="Search Rollors">
+        <button type="submit">Search</button>
+        <button class="search-close" type="button" aria-label="Close search">×</button>
+        <output class="search-status" aria-live="polite"></output>
+      </form>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <img class="hero-image" src="images/Hero_section.png" alt="Friends playing Rollors outdoors" fetchpriority="high">
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow">THE ORIGINAL ROLLING YARD GAME</p>
+          <h1 id="hero-title">THE NEXT GREAT<br>OUTDOOR GAME.</h1>
+          <p class="hero-description">Bringing friends and family together one game at a time.</p>
+          <div class="hero-actions">
+            <a class="button button-red" href="#selector">SHOP ROLLORS <span aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="#how-to-play">HOW TO PLAY <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="hero-mark"><span>ROLLORS®</span><span>MINNESOTA, USA</span></div>
+      </section>
+
+      <section class="brand-strip" aria-label="Featured brand marks">
+        <span class="brand-item"><img src="images/logo-01.png" alt="Featured brand mark 1" loading="lazy"></span>
+        <span class="brand-item"><img src="images/logo-02.png" alt="Featured brand mark 2" loading="lazy"></span>
+        <span class="brand-item"><img src="images/logo-03.png" alt="Featured brand mark 3" loading="lazy"></span>
+        <span class="brand-item"><img src="images/logo-04.png" alt="Featured brand mark 4" loading="lazy"></span>
+        <span class="brand-item"><img src="images/logo-05.png" alt="Featured brand mark 5" loading="lazy"></span>
+      </section>
+
+      <section class="how-to" id="how-to-play" aria-labelledby="how-to-title">
+        <div class="how-heading">
+          <div class="how-heading-main">
+            <p class="eyebrow">02 / HOW TO PLAY</p>
+            <h2 id="how-to-title">LEARN IN<br>MINUTES.</h2>
+          </div>
+          <p class="how-intro">Easy to learn. Skillful enough to keep you rolling. If you can roll a disk, you can play.</p>
+        </div>
+        <div class="steps-grid" id="rules">
+          <article class="step-card">
+            <span class="step-number">01</span>
+            <h3>SET UP</h3>
+            <p>Place the red and blue goals 15–20 feet apart on level grass or sand.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">02</span>
+            <h3>ROLL</h3>
+            <p>Roll each wooden disk on its edge toward your color goal. Blue goes first.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">03</span>
+            <h3>SCORE</h3>
+            <p>Closest to the goal scores. Side, edge, and goal contact each score differently.</p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">04</span>
+            <h3>PLAY</h3>
+            <p>Keep rolling between goals. First to 21 with a two-point lead wins.</p>
+          </article>
+        </div>
+        <div class="how-footer">
+          <div class="game-fact"><strong>2</strong><span>PLAYERS MIN.</span></div>
+          <div class="game-fact"><strong>15–20'</strong><span>OPEN SPACE</span></div>
+          <div class="game-fact"><strong>21</strong><span>POINTS TO WIN</span></div>
+          <a class="button button-light" href="#rules">VIEW ALL RULES <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="manifesto" id="why-rollors" aria-labelledby="manifesto-title">
+        <div class="manifesto-image media-frame">
+          <img src="images/manifesto-image.png" alt="A child holding a blue wooden Rollors disk" loading="lazy">
+        </div>
+        <div class="manifesto-copy">
+          <p class="eyebrow">03 / WHY ROLLORS</p>
+          <h2 id="manifesto-title">UNPLUG.<br><span>GET OUTSIDE.</span><br>PLAY<br>TOGETHER.</h2>
+          <p>We’re on a mission to inspire people to unplug, have fun &amp; create positive memorable experiences.</p>
+          <p class="manifesto-tagline">A few minutes to learn. A lifetime to master.</p>
+        </div>
+      </section>
+
+      <section class="places" id="places" aria-labelledby="places-title">
+        <div class="places-heading">
+          <div>
+            <p class="eyebrow">04 / TAKE IT ANYWHERE</p>
+            <h2 id="places-title">WHERE WILL<br>YOU ROLL?</h2>
+          </div>
+          <p class="places-intro">Backyards, beaches, camping adventures, barbeques, family reunions, graduations and vacations.</p>
+        </div>
+        <div class="places-grid">
+          <figure class="place-card place-beach">
+            <img src="images/figure.place-1.png" alt="A family playing Rollors at the beach" loading="lazy">
+            <figcaption><span>01</span> BEACH DAYS</figcaption>
+          </figure>
+          <figure class="place-card place-camp">
+            <img src="images/figure.place-2.png" alt="A Rollors set beside a camping tent" loading="lazy">
+            <figcaption><span>02</span> CAMPING ADVENTURES</figcaption>
+          </figure>
+          <figure class="place-card place-gathering">
+            <img src="images/figure.place-3.png" alt="Friends playing Rollors at an outdoor gathering" loading="lazy">
+            <figcaption><span>03</span> OUTDOOR GATHERINGS</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="selector" id="selector" aria-labelledby="selector-title">
+        <p class="eyebrow">FIND YOUR ROLLORS</p>
+        <div class="selector-content">
+          <h2 id="selector-title">WHICH<br>PRODUCT<br>IS FOR YOU?</h2>
+          <div class="selector-links">
+            <a href="/products/rollors-outdoor-game"><span class="selector-number">01</span><strong>FIRST GAME?</strong><span class="selector-detail">ROLLORS OUTDOOR GAME</span><span class="selector-arrow" aria-hidden="true">↗</span></a>
+            <a href="/collections/expansion-packs"><span class="selector-number">02</span><strong>MORE PLAYERS / MORE COLORS?</strong><span class="selector-detail">EXPANSION PACKS</span><span class="selector-arrow" aria-hidden="true">↗</span></a>
+            <a href="/collections/replacement-parts"><span class="selector-number">03</span><strong>NEED A REPLACEMENT?</strong><span class="selector-detail">REPLACEMENT PARTS</span><span class="selector-arrow" aria-hidden="true">↗</span></a>
+            <a href="/collections/accessories"><span class="selector-number">04</span><strong>WANT ROLLORS ACCESSORIES?</strong><span class="selector-detail">ACCESSORIES</span><span class="selector-arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="story" id="story" aria-labelledby="story-title">
+        <div class="story-image media-frame">
+          <img src="images/story-image.png" alt="Friends enjoying a game of Rollors outdoors" loading="lazy">
+        </div>
+        <div class="story-copy">
+          <p class="eyebrow">VETERAN OWNED &amp; OPERATED</p>
+          <h2 id="story-title">VISUALIZED<br>OVERSEAS.<br><em>BUILT AT HOME.</em></h2>
+          <p>Minnesota-native Matt Butler first visualized Rollors during downtime between deployments overseas in Iraq and Afghanistan supporting combat operations.</p>
+          <p>Upon return, Matt developed a prototype in his garage that became a hit at BBQs, parties and outdoor get-togethers.</p>
+          <a class="button button-navy" href="/pages/our-story">READ OUR STORY <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="quote" id="journal" aria-label="The Wall Street Journal quote">
+        <span class="quote-mark" aria-hidden="true">“</span>
+        <blockquote>ROLLORS IS THE NEXT GREAT<br>LAWN GAME YOU’VE NEVER<br>HEARD OF.</blockquote>
+        <p class="publication-name">THE WALL STREET JOURNAL</p>
+        <img class="publication-logo" src="images/testimonial_logo.png" alt="The Wall Street Journal logo" loading="lazy">
+      </section>
+
+      <section class="awards" id="recognition" aria-labelledby="awards-title">
+        <div class="awards-intro">
+          <p class="eyebrow">07 / RECOGNITION</p>
+          <h2 id="awards-title">AWARD-WINNING<br>OUTDOOR FUN.</h2>
+        </div>
+        <div class="award-list">
+          <p>2010 DR. TOY “TOP 10 ACTIVE GAMES”</p>
+          <p>2011 MAJOR FUN AWARD</p>
+          <p>2013 NAPPA AWARD</p>
+          <p>2014 MEN’S JOURNAL “BEST GEAR”</p>
+          <p>2014 OPPENHEIM BEST TOY — GOLD SEAL</p>
+        </div>
+      </section>
+
+      <section class="final-cta" id="final-cta" aria-labelledby="final-title">
+        <img class="final-image" src="images/section.final-cta.png" alt="" loading="lazy">
+        <div class="final-overlay" aria-hidden="true"></div>
+        <div class="final-copy">
+          <h2 id="final-title">WHO WILL<br>YOU ROLL WITH?</h2>
+          <p>Bringing friends and family together one game at a time.</p>
+          <div class="final-actions">
+            <a class="button button-red" href="#selector">SHOP ROLLORS <span aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="#how-to-play">HOW TO PLAY</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="footer">
+      <form class="newsletter" id="newsletter">
+        <div>
+          <h2>STAY UPDATED WITH THE LATEST FROM ROLLORS!</h2>
+          <p>News, product updates and more from outside.</p>
+        </div>
+        <label class="newsletter-field">
+          <span class="visually-hidden">Email address</span>
+          <input type="email" name="email" placeholder="Email address" required>
+          <button type="submit" aria-label="Sign up for the newsletter">SUBSCRIBE <span aria-hidden="true">↗</span></button>
+        </label>
+        <output class="newsletter-status" aria-live="polite"></output>
+      </form>
+      <div class="footer-main">
+        <div class="footer-brand-block">
+          <a class="footer-logo" href="#home" aria-label="Rollors home"><img src="images/footer-logo.png" alt="Rollors" loading="lazy"></a>
+          <p>Outdoor fun &amp; social engagement.<br>Veteran owned &amp; operated.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer links">
+          <div>
+            <h3>EXPLORE</h3>
+            <a href="#how-to-play">THE GAME</a>
+            <a href="#selector">BUY NOW</a>
+            <a href="#story">ABOUT US</a>
+            <a href="/blogs/news">JOURNAL</a>
+          </div>
+          <div>
+            <h3>HELP</h3>
+            <a href="/pages/contact">CONTACT US</a>
+            <a href="/pages/inventor-submission">INVENTOR SUBMISSION</a>
+            <a href="/pages/discounts">MILITARY, FIRST RESPONDER<br>&amp; EDUCATOR DISCOUNTS</a>
+          </div>
+          <div class="footer-social-payment">
+            <div class="social-group">
+              <h3>FOLLOW</h3>
+              <div class="social-icons">
+                <a href="https://www.facebook.com/" aria-label="Facebook"><img src="images/facebook.png" alt="" loading="lazy"></a>
+                <a href="https://www.instagram.com/" aria-label="Instagram"><img src="images/instagram.png" alt="" loading="lazy"></a>
+                <a href="https://www.pinterest.com/" aria-label="Pinterest"><img src="images/pinterest.png" alt="" loading="lazy"></a>
+                <a href="https://x.com/" aria-label="X"><img src="images/twitter.png" alt="" loading="lazy"></a>
+                <a href="https://www.youtube.com/" aria-label="YouTube"><img src="images/youtube.png" alt="" loading="lazy"></a>
+              </div>
+            </div>
+            <div class="payment-group">
+              <h3>PAYMENT</h3>
+              <div class="payment-icons">
+                <img src="images/Payment-Icon1.png" alt="Payment method" loading="lazy">
+                <img src="images/Payment-Icon2.png" alt="Payment method" loading="lazy">
+                <img src="images/Payment-Icon3.png" alt="Payment method" loading="lazy">
+                <img src="images/Payment-Icon4.png" alt="Payment method" loading="lazy">
+                <img src="images/Payment-Icon5.png" alt="Payment method" loading="lazy">
+                <img src="images/Payment-Icon6.png" alt="Payment method" loading="lazy">
+                <img src="images/Payment-Icon7.png" alt="Payment method" loading="lazy">
+                <img src="images/Payment-Icon8.png" alt="Payment method" loading="lazy">
+                <img src="images/Payment-Icon9.png" alt="Payment method" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <span>Design by <a href="https://asfa-portfolio.netlify.app/" target="_blank" rel="noopener noreferrer">Asfa Batool Ansari</a></span>
+        <span>PROUD SUPPORTER OF WARRIOR RISING</span>
+        <a href="/policies/refund-policy">TERMS · REFUND POLICY</a>
+      </div>
+    </footer>
+  </body>
+</html>
