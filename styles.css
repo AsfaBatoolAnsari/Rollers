@@ -20,7 +20,7 @@ body {
   font-family: var(--sans);
   -webkit-font-smoothing: antialiased;
 }
-img { display: block; }
+img { display: block; max-width: 100%; }
 img[hidden] { display: none !important; }
 a { color: inherit; text-decoration: none; }
 button, input { font: inherit; }
@@ -266,18 +266,27 @@ button { color: inherit; }
   height: calc(227.8 * var(--u));
   min-height: 112px;
   align-items: center;
-  justify-content: space-between;
-  gap: 0;
-  padding: calc(34 * var(--u)) calc(96 * var(--u));
+  --brand-strip-inset: calc(96 * var(--u));
+  overflow: hidden;
+  padding: calc(34 * var(--u)) var(--brand-strip-inset);
   border-bottom: 1px solid #c3c3c3;
   background: var(--white);
 }
-.brand-item { display: grid; width: calc(272 * var(--u)); height: calc(159 * var(--u)); flex: 0 0 calc(272 * var(--u)); place-items: center; }
+.brand-strip:focus-visible { outline: 2px solid var(--navy); outline-offset: -4px; }
+.brand-viewport { width: 100%; min-width: 0; overflow: hidden; }
+.brand-track { display: flex; width: 200%; flex: 0 0 200%; align-items: center; animation: brand-strip-scroll 32s linear infinite; }
+.brand-set { display: flex; width: 50%; flex: 0 0 50%; align-items: center; justify-content: space-between; }
+.brand-item { display: grid; width: 20%; height: calc(159 * var(--u)); flex: 0 0 20%; place-items: center; }
 .brand-item img { max-width: 100%; max-height: 100%; object-fit: contain; }
 .brand-item:nth-child(1) img, .brand-item:nth-child(3) img { width: calc(158 * var(--u)); height: calc(107 * var(--u)); }
 .brand-item:nth-child(2) img { width: calc(254 * var(--u)); height: calc(96 * var(--u)); }
 .brand-item:nth-child(4) img { width: calc(112 * var(--u)); height: calc(94 * var(--u)); }
 .brand-item:nth-child(5) img { width: calc(102 * var(--u)); height: calc(101 * var(--u)); }
+@keyframes brand-strip-scroll { to { transform: translateX(-50%); } }
+.brand-strip:hover .brand-track, .brand-strip:focus-within .brand-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .brand-track { animation: none; }
+}
 
 .how-to {
   display: flex;
@@ -533,7 +542,7 @@ button { color: inherit; }
 
 .search-result { outline: 2px solid var(--red); outline-offset: -2px; }
 
-@media (max-width: 1100px) {
+@media (max-width: 1023px) {
   :root { --u: 0.07vw; }
   .site-header { min-height: 74px; height: 74px; padding: 0 24px; }
   .brand { width: 190px; height: 60px; }
@@ -570,9 +579,8 @@ button { color: inherit; }
   .hero { height: min(78vw, 760px); min-height: 540px; }
   .hero-content { width: auto; margin: 0 36px 90px; }
   .hero h1 { font-size: clamp(64px, 10vw, 112px); }
-  .brand-strip { min-height: 130px; height: auto; gap: 14px; padding: 20px 28px; }
-  .brand-item { width: 18%; height: 70px; flex: 0 0 18%; }
-  .brand-item img { width: auto !important; height: auto !important; max-width: 100%; max-height: 100%; }
+  .brand-strip { min-height: 130px; height: auto; --brand-strip-inset: 28px; padding: 20px var(--brand-strip-inset); }
+  .brand-item { width: 20%; height: 70px; flex: 0 0 20%; }
   .how-to { height: auto; min-height: 0; padding: 80px 40px 36px; }
   .how-heading { height: auto; min-height: 250px; gap: 40px; padding-bottom: 36px; }
   .how-heading h2 { font-size: clamp(60px, 9vw, 96px); }
@@ -615,7 +623,40 @@ button { color: inherit; }
   .footer-bottom { min-height: 56px; padding: 16px 40px; }
 }
 
-@media (max-width: 700px) {
+@media (min-width: 601px) and (max-width: 1023px) {
+  .manifesto, .story {
+    height: auto;
+    min-height: 0;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .manifesto-image, .story-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.45;
+  }
+  .manifesto-copy, .story-copy {
+    width: 100%;
+    min-width: 0;
+    padding: clamp(36px, 7vw, 64px);
+  }
+  .manifesto-copy h2, .story-copy h2 {
+    max-width: 100%;
+    font-size: clamp(46px, 8vw, 72px);
+    line-height: .94;
+    overflow-wrap: anywhere;
+  }
+  .manifesto-copy h2 span { white-space: normal; }
+  .manifesto-copy > p:not(.eyebrow), .story-copy > p:not(.eyebrow) {
+    width: 100%;
+    max-width: 100%;
+  }
+  .places-heading { align-items: flex-start; flex-direction: column; gap: 18px; }
+  .places-intro { width: 100%; max-width: 560px; }
+  .payment-icons { width: 100%; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+  .payment-icons img { width: 100%; height: auto; aspect-ratio: 2; }
+}
+
+@media (max-width: 600px) {
   .announcement { height: 28px; min-height: 28px; font-size: 8px; }
   .site-header { min-height: 66px; height: 66px; padding: 0 20px; }
   .brand { width: 150px; height: 52px; }
@@ -631,8 +672,8 @@ button { color: inherit; }
   .hero-actions { gap: 8px; margin-top: 22px; }
   .button { min-width: 0; min-height: 46px; gap: 14px; padding: 13px 14px; font-size: 9px; }
   .hero-mark { right: 20px; bottom: 18px; font-size: 7px; letter-spacing: .8px; }
-  .brand-strip { min-height: 100px; gap: 8px; padding: 12px 16px; }
-  .brand-item { width: calc((100% - 32px) / 5); height: 56px; flex: 0 0 calc((100% - 32px) / 5); }
+  .brand-strip { min-height: 100px; --brand-strip-inset: 16px; padding: 12px var(--brand-strip-inset); }
+  .brand-item { width: 20%; height: 56px; flex: 0 0 20%; }
   .how-to { padding: 64px 24px 26px; }
   .how-heading { min-height: 0; flex-direction: column; align-items: flex-start; gap: 18px; padding-bottom: 26px; }
   .how-heading .eyebrow { margin-bottom: 18px; }
@@ -652,8 +693,13 @@ button { color: inherit; }
   .manifesto-image { height: auto; aspect-ratio: 1.05; }
   .manifesto-copy { min-height: 430px; padding: 44px 26px; }
   .manifesto-copy .eyebrow { margin-bottom: 28px; }
-  .manifesto-copy h2 { font-size: clamp(48px, 12vw, 72px); }
-  .manifesto-copy > p:not(.eyebrow) { margin-top: 22px; font-size: 13px; }
+  .manifesto-copy h2 {
+    max-width: 100%;
+    font-size: clamp(36px, 11vw, 64px);
+    line-height: .94;
+    overflow-wrap: anywhere;
+  }
+  .manifesto-copy > p:not(.eyebrow) { width: 100%; max-width: 100%; margin-top: 22px; font-size: 13px; }
   .manifesto-copy .manifesto-tagline { font-size: 17px; }
   .places { padding: 64px 24px; }
   .places-heading { align-items: flex-start; flex-direction: column; gap: 18px; margin-bottom: 28px; }
@@ -661,8 +707,8 @@ button { color: inherit; }
   .places-heading h2 { font-size: clamp(62px, 14vw, 82px); }
   .places-intro { width: auto; max-width: 380px; margin: 0; font-size: 12px; line-height: 1.8; }
   .places-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 8px; }
-  .place-card { min-height: 170px; aspect-ratio: 1 / 1.15; }
-  .place-beach { grid-row: auto; grid-column: 1 / -1; min-height: 250px; aspect-ratio: 1.25; }
+  .place-card { min-height: 0; aspect-ratio: 1 / 1.15; }
+  .place-beach { grid-row: auto; grid-column: 1 / -1; min-height: 0; aspect-ratio: 1.25; }
   .place-card figcaption { bottom: 14px; left: 14px; gap: 8px; font-size: 8px; }
   .place-card figcaption span { font-size: 18px; }
   .selector { padding: 64px 24px; }
@@ -678,8 +724,13 @@ button { color: inherit; }
   .story-image { height: auto; aspect-ratio: 1.05; }
   .story-copy { padding: 48px 26px; }
   .story-copy .eyebrow { margin-bottom: 28px; font-size: 10px; }
-  .story-copy h2 { font-size: clamp(51px, 12.3vw, 75px); }
-  .story-copy > p:not(.eyebrow) { margin-top: 20px; font-size: 13px; }
+  .story-copy h2 {
+    max-width: 100%;
+    font-size: clamp(36px, 11vw, 64px);
+    line-height: .94;
+    overflow-wrap: anywhere;
+  }
+  .story-copy > p:not(.eyebrow) { width: 100%; max-width: 100%; margin-top: 20px; font-size: 13px; }
   .story-copy .button { margin-top: 26px; }
   .quote { min-height: 410px; gap: 21px; padding: 60px 24px; }
   .quote-mark { height: 34px; font-size: 76px; }
@@ -719,8 +770,7 @@ button { color: inherit; }
 @media (max-width: 370px) {
   .hero-actions { align-items: flex-start; flex-direction: column; }
   .hero-actions .button { width: 190px; }
-  .brand-strip { gap: 5px; padding-right: 12px; padding-left: 12px; }
-  .brand-item { width: calc((100% - 20px) / 5); flex: 0 0 calc((100% - 20px) / 5); }
+  .brand-strip { --brand-strip-inset: 12px; padding-right: var(--brand-strip-inset); padding-left: var(--brand-strip-inset); }
   .step-card { min-height: 205px; }
   .footer-links { column-gap: 14px; }
 }
